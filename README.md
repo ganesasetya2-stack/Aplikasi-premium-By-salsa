@@ -1,2 +1,4 @@
-# Aplikasi-premium-By-salsa
-Premium Apps Collection by Salsa
+# Premium Apps Collection by Salsa
+
+Website katalog aplikasi premium.
+Dibuat oleh Salsa.
