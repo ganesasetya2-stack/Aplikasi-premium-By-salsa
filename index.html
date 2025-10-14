@@ -1149,7 +1149,7 @@
         transform: translateX(0);
       }
 
-      /* AI Live Support Styles */
+      /* AI Live Support Styles - UPDATED */
       .ai-support {
         position: fixed;
         bottom: 30px;
@@ -1212,63 +1212,92 @@
         margin: 0;
       }
 
-      /* TAMBAHIN CSS ini di bagian AI Chat */
-.ai-chat-messages {
-    flex: 1;
-    padding: 1rem;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    background: rgba(255, 255, 255, 0.95);
-}
+      .ai-chat-messages {
+        flex: 1;
+        padding: 1rem;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        background: rgba(255, 255, 255, 0.95);
+      }
 
-.ai-message {
-    max-width: 85%;
-    padding: 0.8rem 1rem;
-    border-radius: 18px;
-    font-size: 0.9rem;
-    line-height: 1.4;
-    word-wrap: break-word;
-}
+      .ai-message {
+        max-width: 85%;
+        padding: 0.8rem 1rem;
+        border-radius: 18px;
+        font-size: 0.9rem;
+        line-height: 1.4;
+        word-wrap: break-word;
+      }
 
-.ai-message.bot {
-    background: rgba(184, 148, 92, 0.15);
-    border-bottom-left-radius: 5px;
-    align-self: flex-start;
-    color: var(--vintage-dark);
-    border: 1px solid rgba(184, 148, 92, 0.3);
-}
+      .ai-message.bot {
+        background: rgba(184, 148, 92, 0.15);
+        border-bottom-left-radius: 5px;
+        align-self: flex-start;
+        color: var(--vintage-dark);
+        border: 1px solid rgba(184, 148, 92, 0.3);
+      }
 
-.ai-message.user {
-    background: linear-gradient(135deg, var(--vintage-green), #3a6b4a);
-    color: white;
-    border-bottom-right-radius: 5px;
-    align-self: flex-end;
-}
+      .ai-message.user {
+        background: linear-gradient(135deg, var(--vintage-green), #3a6b4a);
+        color: white;
+        border-bottom-right-radius: 5px;
+        align-self: flex-end;
+      }
 
-/* Typing animation */
-.typing-indicator {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-}
+      .ai-chat-input {
+        display: flex;
+        padding: 1rem;
+        border-top: 1px solid rgba(141, 110, 99, 0.3);
+        gap: 0.5rem;
+      }
 
-.typing-dot {
-    width: 6px;
-    height: 6px;
-    background: var(--vintage-light);
-    border-radius: 50%;
-    animation: typing 1.4s infinite ease-in-out;
-}
+      .ai-chat-input input {
+        flex: 1;
+        padding: 0.8rem 1rem;
+        border: 1px solid var(--vintage-light);
+        border-radius: 20px;
+        font-size: 0.9rem;
+        outline: none;
+      }
 
-.typing-dot:nth-child(1) { animation-delay: -0.32s; }
-.typing-dot:nth-child(2) { animation-delay: -0.16s; }
+      .ai-chat-input button {
+        background: var(--vintage-gold);
+        color: var(--vintage-dark);
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-@keyframes typing {
-    0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
-    40% { transform: scale(1); opacity: 1; }
-}
+      /* Typing animation */
+      .typing-indicator {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+      }
+
+      .typing-dot {
+        width: 6px;
+        height: 6px;
+        background: var(--vintage-light);
+        border-radius: 50%;
+        animation: typing 1.4s infinite ease-in-out;
+      }
+
+      .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+      .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+
+      @keyframes typing {
+        0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+        40% { transform: scale(1); opacity: 1; }
+      }
+
       /* Add Review Modal */
       .add-review-modal {
         max-width: 600px;
@@ -1413,7 +1442,7 @@
     <!-- Flying App Icons -->
     <div class="flying-icons" id="flyingIcons"></div>
 
-    <!-- AI Live Support -->
+    <!-- AI Live Support - FIXED -->
     <div class="ai-support">
       <button class="ai-support-btn" id="aiSupportBtn">
         <i class="fas fa-robot"></i>
@@ -1425,7 +1454,7 @@
         </div>
         <div class="ai-chat-messages" id="aiChatMessages">
           <div class="ai-message bot">
-            Halo! Saya AI Assistant Premium Apps Collection. Ada yang bisa saya bantu?
+            Halo! 👋 Saya AI Assistant Premium Apps Collection. Ada yang bisa saya bantu hari ini?
           </div>
         </div>
         <div class="ai-chat-input">
@@ -1871,7 +1900,7 @@
       </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- JavaScript - AI LIVE SUPPORT FIXED -->
     <script>
       // ==================== FLYING ICONS ANIMATION ====================
       function createFlyingIcons() {
@@ -1991,68 +2020,93 @@ Berikut bukti transfernya. Terima kasih!`;
         }
       });
 
-      // ==================== AI LIVE SUPPORT ====================
+      // ==================== AI LIVE SUPPORT - FIXED ====================
       const aiSupportBtn = document.getElementById('aiSupportBtn');
       const aiChatContainer = document.getElementById('aiChatContainer');
       const aiChatMessages = document.getElementById('aiChatMessages');
       const aiChatInput = document.getElementById('aiChatInput');
       const aiSendBtn = document.getElementById('aiSendBtn');
 
-      // AI Responses
+      // AI Responses - IMPROVED
       const aiResponses = {
-        'harga': 'Harga produk kami sangat terjangkau! Silakan cek di halaman katalog untuk melihat detail harga setiap produk.',
-        'netflix': 'Kami menyediakan Netflix Premium dengan berbagai pilihan durasi mulai dari 7 hari hingga 1 bulan private. Harga mulai dari Rp 16.000.',
-        'disney': 'Disney+ tersedia dengan berbagai pilihan paket, mulai dari 1 hari hingga 1 bulan. Harga mulai dari Rp 7.000.',
-        'canva': 'Canva Pro tersedia dengan berbagai durasi, termasuk paket lifetime dengan harga Rp 35.000.',
-        'spotify': 'Spotify Premium tersedia dengan garansi dan tanpa garansi. Harga mulai dari Rp 18.000 untuk 1 bulan.',
-        'pembayaran': 'Kami menerima pembayaran via QRIS, transfer bank, Dana, OVO, dan Gopay. Setelah bayar, konfirmasi via WhatsApp dengan bukti transfer.',
-        'pengiriman': 'Produk dikirim secara INSTAN setelah pembayaran dikonfirmasi. Biasanya dalam 1-5 menit setelah konfirmasi.',
-        'garansi': 'Ya, semua produk dilengkapi dengan garansi sesuai durasi yang dipilih. Jika ada kendala, silakan hubungi customer service.',
-        'default': 'Maaf, saya belum paham pertanyaan Anda. Silakan hubungi WhatsApp kami di +62 817-6323-491 untuk bantuan lebih lanjut.'
+          'halo|hai|hi|hello': 'Halo! 👋 Saya AI Assistant Premium Apps Collection. Ada yang bisa saya bantu hari ini?',
+          'harga|berapa': 'Harga produk kami sangat terjangkau! Silakan cek di halaman katalog untuk melihat detail harga setiap produk. 📊',
+          'netflix': '🎬 **Netflix Premium** tersedia:\n• 7 hari: Rp 16.000\n• 1 bulan 1 user: Rp 42.000\n• Private: Rp 175.000\nCek katalog untuk semua pilihan!',
+          'disney': '🏰 **Disney+** paket:\n• 1 hari: Rp 7.000\n• 1 bulan 5 user: Rp 31.000\n• Private juga tersedia!',
+          'canva': '🎨 **Canva Pro**:\n• 1 bulan: Rp 9.000\n• Lifetime: Rp 35.000\n• Semua fitur premium unlocked!',
+          'spotify': '🎵 **Spotify Premium**:\n• 1 bulan garansi: Rp 25.000\n• 1 bulan no garansi: Rp 18.000\n• Bisa pilih sesuai kebutuhan!',
+          'pembayaran|bayar|transfer': '💳 **Metode Pembayaran**:\n• QRIS (Recommended)\n• Transfer Bank\n• Dana/OVO/Gopay\nSetelah bayar, konfirmasi via WhatsApp!',
+          'pengiriman|kirim|proses': '⚡ **PROSES INSTAN!**\nProduk dikirim 1-5 menit setelah pembayaran dikonfirmasi. Biasanya langsung aktif!',
+          'garansi|jamin|refund': '🛡️ **Semua produk ada garansi** sesuai durasi. Jika ada masalah, hubungi CS kami via WhatsApp!',
+          'kontak|cs|admin|whatsapp': '📞 **Hubungi Kami**:\n• WhatsApp: +62 817-6323-491\n• Instagram: @aplikasipremium.salsa\n• 24/7 Support!',
+          'cara order|pesan|beli': '🛒 **Cara Order**:\n1. Pilih produk di katalog\n2. Klik durasi yang diinginkan\n3. Bayar via QRIS/transfer\n4. Konfirmasi via WhatsApp\n5. Produk dikirim INSTAN!',
+          'terima kasih|makasih|thanks': '👍 Sama-sama! Semoga puas dengan layanan kami. Kalau ada pertanyaan lagi, jangan ragu tanya ya!',
+          'default': '🤔 Maaf, saya belum paham pertanyaannya. Bisa diulangi dengan kata kunci:\n• Harga Netflix\n• Cara bayar\n• Garansi\n• Kontak admin\nAtau langsung chat WhatsApp: +62 817-6323-491'
       };
 
       function toggleAIChat() {
-        aiChatContainer.classList.toggle('active');
+          aiChatContainer.classList.toggle('active');
       }
 
       function sendAIMessage() {
-        const message = aiChatInput.value.trim();
-        if (!message) return;
+          const message = aiChatInput.value.trim();
+          if (!message) return;
 
-        // Add user message
-        addAIMessage(message, 'user');
-        aiChatInput.value = '';
+          // Add user message
+          addAIMessage(message, 'user');
+          aiChatInput.value = '';
 
-        // Generate AI response
-        setTimeout(() => {
-          let response = aiResponses.default;
-          const lowerMessage = message.toLowerCase();
-          
-          for (const keyword in aiResponses) {
-            if (lowerMessage.includes(keyword)) {
-              response = aiResponses[keyword];
-              break;
-            }
-          }
-          
-          addAIMessage(response, 'bot');
-        }, 1000);
+          // Show typing indicator
+          const typingIndicator = document.createElement('div');
+          typingIndicator.className = 'ai-message bot';
+          typingIndicator.innerHTML = `
+              <div class="typing-indicator">
+                  <div class="typing-dot"></div>
+                  <div class="typing-dot"></div>
+                  <div class="typing-dot"></div>
+              </div>
+          `;
+          aiChatMessages.appendChild(typingIndicator);
+          aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+
+          // Generate AI response after delay
+          setTimeout(() => {
+              // Remove typing indicator
+              aiChatMessages.removeChild(typingIndicator);
+              
+              let response = aiResponses.default;
+              const lowerMessage = message.toLowerCase();
+              
+              // Cek semua keyword
+              for (const keyword in aiResponses) {
+                  const keywords = keyword.split('|');
+                  if (keywords.some(k => lowerMessage.includes(k))) {
+                      response = aiResponses[keyword];
+                      break;
+                  }
+              }
+              
+              addAIMessage(response, 'bot');
+          }, 1500); // Delay 1.5 detik untuk efek natural
       }
 
       function addAIMessage(text, sender) {
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `ai-message ${sender}`;
-        messageDiv.textContent = text;
-        aiChatMessages.appendChild(messageDiv);
-        aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+          const messageDiv = document.createElement('div');
+          messageDiv.className = `ai-message ${sender}`;
+          messageDiv.textContent = text;
+          aiChatMessages.appendChild(messageDiv);
+          
+          // Auto scroll ke bawah
+          aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
       }
 
       aiSupportBtn.addEventListener('click', toggleAIChat);
       aiSendBtn.addEventListener('click', sendAIMessage);
       aiChatInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-          sendAIMessage();
-        }
+          if (e.key === 'Enter') {
+              sendAIMessage();
+              this.value = ''; // Clear input setelah kirim
+          }
       });
 
       // ==================== ADD REVIEW SYSTEM ====================
@@ -2066,72 +2120,72 @@ Berikut bukti transfernya. Terima kasih!`;
 
       // Setup rating stars
       ratingInput.querySelectorAll('i').forEach(star => {
-        star.addEventListener('click', function() {
-          const rating = parseInt(this.dataset.rating);
-          reviewRating.value = rating;
-          
-          // Update star display
-          ratingInput.querySelectorAll('i').forEach((s, index) => {
-            if (index < rating) {
-              s.classList.add('active');
-            } else {
-              s.classList.remove('active');
-            }
+          star.addEventListener('click', function() {
+              const rating = parseInt(this.dataset.rating);
+              reviewRating.value = rating;
+              
+              // Update star display
+              ratingInput.querySelectorAll('i').forEach((s, index) => {
+                  if (index < rating) {
+                      s.classList.add('active');
+                  } else {
+                      s.classList.remove('active');
+                  }
+              });
           });
-        });
       });
 
       // Populate product dropdown
       function populateProductDropdown() {
-        const uniqueProducts = [...new Set(products.map(p => p.name))];
-        reviewProduct.innerHTML = '<option value="">Pilih Produk</option>' +
-          uniqueProducts.map(p => `<option value="${p}">${p}</option>`).join('');
+          const uniqueProducts = [...new Set(products.map(p => p.name))];
+          reviewProduct.innerHTML = '<option value="">Pilih Produk</option>' +
+              uniqueProducts.map(p => `<option value="${p}">${p}</option>`).join('');
       }
 
       function showAddReviewModal() {
-        addReviewModal.classList.add('active');
+          addReviewModal.classList.add('active');
       }
 
       function closeAddReviewModal() {
-        addReviewModal.classList.remove('active');
-        reviewForm.reset();
-        ratingInput.querySelectorAll('i').forEach(star => {
-          star.classList.remove('active');
-        });
+          addReviewModal.classList.remove('active');
+          reviewForm.reset();
+          ratingInput.querySelectorAll('i').forEach(star => {
+              star.classList.remove('active');
+          });
       }
 
       function handleReviewSubmit(e) {
-        e.preventDefault();
-        
-        const name = document.getElementById('reviewerName').value;
-        const product = document.getElementById('reviewProduct').value;
-        const rating = document.getElementById('reviewRating').value;
-        const text = document.getElementById('reviewText').value;
-        
-        if (!name || !product || !rating || !text) {
-          showNotification('Harap isi semua field!');
-          return;
-        }
-        
-        // Add new review
-        const newReview = {
-          id: Date.now(),
-          name: name,
-          initial: name.charAt(0).toUpperCase(),
-          rating: parseInt(rating),
-          product: product,
-          date: 'Baru saja',
-          text: text,
-          helpful: 0,
-          images: []
-        };
-        
-        reviews.unshift(newReview);
-        localStorage.setItem('reviews', JSON.stringify(reviews));
-        renderReviews();
-        updateReviewStats();
-        closeAddReviewModal();
-        showNotification('Ulasan berhasil ditambahkan!');
+          e.preventDefault();
+          
+          const name = document.getElementById('reviewerName').value;
+          const product = document.getElementById('reviewProduct').value;
+          const rating = document.getElementById('reviewRating').value;
+          const text = document.getElementById('reviewText').value;
+          
+          if (!name || !product || !rating || !text) {
+              showNotification('Harap isi semua field!');
+              return;
+          }
+          
+          // Add new review
+          const newReview = {
+              id: Date.now(),
+              name: name,
+              initial: name.charAt(0).toUpperCase(),
+              rating: parseInt(rating),
+              product: product,
+              date: 'Baru saja',
+              text: text,
+              helpful: 0,
+              images: []
+          };
+          
+          reviews.unshift(newReview);
+          localStorage.setItem('reviews', JSON.stringify(reviews));
+          renderReviews();
+          updateReviewStats();
+          closeAddReviewModal();
+          showNotification('Ulasan berhasil ditambahkan!');
       }
 
       addReviewBtn.addEventListener('click', showAddReviewModal);
@@ -2140,44 +2194,44 @@ Berikut bukti transfernya. Terima kasih!`;
 
       // Close modal when clicking outside
       addReviewModal.addEventListener('click', function(e) {
-        if (e.target === addReviewModal) {
-          closeAddReviewModal();
-        }
+          if (e.target === addReviewModal) {
+              closeAddReviewModal();
+          }
       });
 
       // ==================== MULTI-PAGE NAVIGATION ====================
       function showPage(pageId) {
-        // Hide all pages
-        document.querySelectorAll('.page').forEach(page => {
-          page.classList.remove('active');
-        });
-        
-        // Show selected page
-        document.getElementById(pageId + '-page').classList.add('active');
-        
-        // Update active nav link
-        document.querySelectorAll('.nav-link').forEach(link => {
-          link.classList.remove('active');
-        });
-        event.target.classList.add('active');
-        
-        // Close mobile menu if open
-        document.getElementById('navMenu').classList.remove('active');
-        
-        // Scroll to top
-        window.scrollTo(0, 0);
-        
-        // Load specific content if needed
-        if (pageId === 'catalog') {
-          renderProducts();
-        } else if (pageId === 'home') {
-          renderFeaturedProducts();
-        }
+          // Hide all pages
+          document.querySelectorAll('.page').forEach(page => {
+              page.classList.remove('active');
+          });
+          
+          // Show selected page
+          document.getElementById(pageId + '-page').classList.add('active');
+          
+          // Update active nav link
+          document.querySelectorAll('.nav-link').forEach(link => {
+              link.classList.remove('active');
+          });
+          event.target.classList.add('active');
+          
+          // Close mobile menu if open
+          document.getElementById('navMenu').classList.remove('active');
+          
+          // Scroll to top
+          window.scrollTo(0, 0);
+          
+          // Load specific content if needed
+          if (pageId === 'catalog') {
+              renderProducts();
+          } else if (pageId === 'home') {
+              renderFeaturedProducts();
+          }
       }
 
       // Mobile menu toggle
       document.getElementById('mobileToggle').addEventListener('click', function() {
-        document.getElementById('navMenu').classList.toggle('active');
+          document.getElementById('navMenu').classList.toggle('active');
       });
 
       // ==================== PRODUCT DATA (LENGKAP) ====================
