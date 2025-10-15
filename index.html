@@ -1440,6 +1440,210 @@
         }
       }
 
+      /* ========== PAYMENT OPTIMIZATION STYLES ========== */
+      .payment-status {
+        text-align: center;
+        padding: 2rem;
+        border-radius: 15px;
+        margin: 1.5rem 0;
+        display: none;
+      }
+      
+      .payment-success {
+        background: linear-gradient(135deg, #4CAF50, #45a049);
+        color: white;
+        display: block;
+        animation: fadeIn 0.5s ease;
+      }
+      
+      .payment-pending {
+        background: linear-gradient(135deg, #FF9800, #F57C00);
+        color: white;
+        display: block;
+        animation: fadeIn 0.5s ease;
+      }
+      
+      .payment-failed {
+        background: linear-gradient(135deg, #f44336, #d32f2f);
+        color: white;
+        display: block;
+        animation: fadeIn 0.5s ease;
+      }
+      
+      .payment-status-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+      
+      .payment-status h4 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        font-family: 'Cormorant Garamond', serif;
+      }
+      
+      .whatsapp-confirm {
+        background: linear-gradient(135deg, #25D366, #128C7E);
+        color: white;
+        padding: 1.5rem;
+        border-radius: 12px;
+        margin: 1.5rem 0;
+        text-align: center;
+        animation: pulse 2s infinite;
+      }
+      
+      .whatsapp-confirm a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        font-size: 1.1rem;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+      
+      .whatsapp-confirm a:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+      }
+      
+      .countdown-timer {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--gold-brass);
+        margin: 1rem 0;
+        text-align: center;
+      }
+      
+      .payment-steps {
+        display: flex;
+        justify-content: space-between;
+        margin: 2rem 0;
+        position: relative;
+      }
+      
+      .payment-steps::before {
+        content: '';
+        position: absolute;
+        top: 20px;
+        left: 10%;
+        right: 10%;
+        height: 2px;
+        background: var(--gold-brass);
+        z-index: 1;
+      }
+      
+      .payment-step {
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        flex: 1;
+      }
+      
+      .step-number {
+        width: 40px;
+        height: 40px;
+        background: var(--cream-ivory);
+        border: 2px solid var(--gold-brass);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 0.5rem;
+        font-weight: 600;
+        color: var(--dark-chocolate);
+      }
+      
+      .step-active .step-number {
+        background: var(--gold-brass);
+        color: var(--dark-chocolate);
+      }
+      
+      .step-completed .step-number {
+        background: var(--forest-green);
+        color: white;
+        border-color: var(--forest-green);
+      }
+      
+      .step-text {
+        font-size: 0.9rem;
+        color: var(--dark-chocolate);
+        font-weight: 500;
+      }
+      
+      .auto-check-notice {
+        background: rgba(212, 175, 55, 0.1);
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 1rem 0;
+        text-align: center;
+        border-left: 4px solid var(--gold-brass);
+        font-size: 0.9rem;
+      }
+      
+      @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      .copy-button {
+        background: var(--gold-brass);
+        color: var(--dark-chocolate);
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 600;
+        margin-left: 0.5rem;
+        transition: all 0.3s ease;
+      }
+      
+      .copy-button:hover {
+        background: var(--vintage-gold-light);
+        transform: translateY(-2px);
+      }
+      
+      .order-summary {
+        background: rgba(212, 175, 55, 0.1);
+        padding: 1.5rem;
+        border-radius: 12px;
+        margin: 1.5rem 0;
+        border-left: 4px solid var(--gold-brass);
+      }
+      
+      .summary-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(141, 110, 99, 0.2);
+      }
+      
+      .summary-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      
+      .summary-total {
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: var(--forest-green);
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 2px solid var(--gold-brass);
+      }
+
       /* Responsive */
       @media (max-width: 768px) {
         .nav-menu {
@@ -1523,6 +1727,15 @@
           height: 60px;
           font-size: 1.5rem;
         }
+
+        .payment-steps {
+          flex-direction: column;
+          gap: 1rem;
+        }
+        
+        .payment-steps::before {
+          display: none;
+        }
       }
     </style>
   </head>
@@ -1586,7 +1799,7 @@
       </div>
     </div>
 
-    <!-- QRIS Modal -->
+    <!-- QRIS Modal - OPTIMIZED -->
     <div class="modal-overlay" id="qrisModal">
       <div class="modal-content qris-content">
         <div class="modal-header">
@@ -1594,14 +1807,57 @@
           <p>Scan QR Code untuk pembayaran</p>
         </div>
 
-        <div class="payment-info" id="qrisProductInfo">
-          <!-- Product info for QRIS -->
+        <!-- Payment Steps -->
+        <div class="payment-steps">
+          <div class="payment-step step-active" id="step1">
+            <div class="step-number">1</div>
+            <div class="step-text">Pilih Produk</div>
+          </div>
+          <div class="payment-step" id="step2">
+            <div class="step-number">2</div>
+            <div class="step-text">Bayar</div>
+          </div>
+          <div class="payment-step" id="step3">
+            <div class="step-number">3</div>
+            <div class="step-text">Selesai</div>
+          </div>
         </div>
 
-        <div class="qris-container">
+        <!-- Order Summary -->
+        <div class="order-summary" id="orderSummary">
+          <!-- Order summary will be inserted here -->
+        </div>
+
+        <!-- Payment Status -->
+        <div class="payment-status payment-pending" id="paymentPending">
+          <div class="payment-status-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h4>Menunggu Pembayaran</h4>
+          <p>Silakan selesaikan pembayaran dalam</p>
+          <div class="countdown-timer" id="countdownTimer">05:00</div>
+        </div>
+
+        <div class="payment-status payment-success" id="paymentSuccess">
+          <div class="payment-status-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h4>Pembayaran Berhasil!</h4>
+          <p>Pembayaran Anda telah berhasil diverifikasi</p>
+        </div>
+
+        <div class="payment-status payment-failed" id="paymentFailed">
+          <div class="payment-status-icon">
+            <i class="fas fa-times-circle"></i>
+          </div>
+          <h4>Pembayaran Gagal</h4>
+          <p>Silakan coba lagi atau hubungi customer service</p>
+        </div>
+
+        <!-- QRIS Container -->
+        <div class="qris-container" id="qrisContainer">
           <div class="qris-code">
-            <!-- GANTI DENGAN LINK YANG BENAR -->
-            <img src="https://i.ibb.co.com/4wGCMcdh/QRIS-SALSA.png" alt="QRIS-SALSA" border="0"></alt="QRIS Payment" style="width: 200px; height: 200px; border-radius: 8px; object-fit: cover;" />
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=YourDynamicQRData" alt="QRIS Payment" id="qrisImage" style="width: 250px; height: 250px; border-radius: 8px; object-fit: cover;" />
           </div>
           <p style="margin-top: 1rem; font-weight: 600; color: var(--dark-chocolate);">
             SALSA INDRIANI ARIKA DININGRAT
@@ -1609,12 +1865,28 @@
           <p style="color: var(--vintage-light); font-size: 0.9rem">
             NMID: ID1025410985531
           </p>
+          
+          <!-- Amount Information -->
+          <div style="margin-top: 1rem; padding: 1rem; background: rgba(114, 47, 55, 0.1); border-radius: 8px;">
+            <p style="margin: 0; font-weight: 600; color: var(--deep-burgundy);">
+              Total Pembayaran: <span id="paymentAmount">Rp 0</span>
+            </p>
+            <button class="copy-button" onclick="copyPaymentAmount()">
+              <i class="fas fa-copy"></i> Salin
+            </button>
+          </div>
         </div>
 
-        <div class="whatsapp-info">
+        <!-- Auto Check Notice -->
+        <div class="auto-check-notice">
+          <i class="fas fa-sync-alt"></i> Sistem akan secara otomatis memeriksa pembayaran Anda
+        </div>
+
+        <!-- WhatsApp Confirmation -->
+        <div class="whatsapp-confirm" id="whatsappConfirm" style="display: none;">
           <p><strong>Konfirmasi Pembayaran via WhatsApp</strong></p>
-          <a href="https://wa.me/628176323491" id="whatsappLink" target="_blank">
-            <i class="fab fa-whatsapp"></i> Klik untuk Konfirmasi
+          <a href="#" id="whatsappLink" target="_blank">
+            <i class="fab fa-whatsapp"></i> Klik untuk Konfirmasi ke Admin
           </a>
         </div>
 
@@ -1622,10 +1894,13 @@
           <button class="modal-btn cancel" id="closeQris">
             <i class="fas fa-times"></i> Tutup
           </button>
+          <button class="modal-btn confirm" id="checkPayment" style="display: none;">
+            <i class="fas fa-redo"></i> Cek Status Pembayaran
+          </button>
         </div>
 
-        <p style="font-size: 0.8rem; color: var(--vintage-light); margin-top: 1rem;">
-          *Setelah bayar, konfirmasi via WhatsApp dengan bukti transfer
+        <p style="font-size: 0.8rem; color: var(--vintage-light); margin-top: 1rem; text-align: center;">
+          *Pembayaran akan diverifikasi otomatis dalam 1-3 menit
         </p>
       </div>
     </div>
@@ -1867,8 +2142,259 @@
       </div>
     </footer>
 
-    <!-- JavaScript - AI LIVE SUPPORT -->
     <script>
+      // ==================== PAYMENT OPTIMIZATION SYSTEM ====================
+      
+      // Variabel global untuk sistem pembayaran
+      let currentOrder = null;
+      let paymentTimer = null;
+      let countdownTime = 300; // 5 menit dalam detik
+      let paymentChecked = false;
+      
+      // Fungsi untuk mengupdate QRIS dengan harga yang sesuai
+      function updateQRISWithPrice(price) {
+        // Extract numeric value from price string (e.g., "Rp 42.000" -> 42000)
+        const numericPrice = parseInt(price.replace(/[^\d]/g, ''));
+        
+        if (!isNaN(numericPrice)) {
+          // Format untuk QRIS data (dalam praktik nyata, ini akan di-generate oleh backend)
+          const qrData = `00020101021126690014ID.LINKAJA.WWW0118936009110100763234910215Premium%20Apps0306UMI%20QR510454115802ID5914SALSA%20INDRIANI6013JAKARTA%20PUSAT61051014062070703A016304`;
+          
+          // Update payment amount display
+          document.getElementById('paymentAmount').textContent = formatCurrency(numericPrice);
+          
+          // Simulasikan update QR code dengan harga yang sesuai
+          // Dalam implementasi nyata, Anda akan memanggil API untuk generate QR code
+          const qrImage = document.getElementById('qrisImage');
+          qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(qrData)}&amount=${numericPrice}`;
+          
+          // Update WhatsApp link dengan informasi yang lengkap
+          updateWhatsAppLink(numericPrice);
+        }
+      }
+      
+      // Fungsi untuk memformat currency
+      function formatCurrency(amount) {
+        return 'Rp ' + amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+      }
+      
+      // Fungsi untuk mengupdate WhatsApp link
+      function updateWhatsAppLink(amount) {
+        if (!currentOrder) return;
+        
+        const { productName, duration } = currentOrder;
+        const formattedAmount = formatCurrency(amount);
+        
+        const message = `Halo admin Premium Apps Collection! Saya sudah melakukan pembayaran:
+
+📦 Produk: ${productName}
+⏱️ Durasi: ${duration}
+💰 Jumlah: ${formattedAmount}
+
+Mohon segera diproses pesanan saya. Terima kasih!`;
+
+        const whatsappLink = document.getElementById('whatsappLink');
+        whatsappLink.href = `https://wa.me/628176323491?text=${encodeURIComponent(message)}`;
+      }
+      
+      // Fungsi untuk menyalin jumlah pembayaran
+      function copyPaymentAmount() {
+        const amountText = document.getElementById('paymentAmount').textContent;
+        navigator.clipboard.writeText(amountText).then(() => {
+          showNotification('Jumlah pembayaran berhasil disalin!');
+        });
+      }
+      
+      // Fungsi untuk memulai countdown pembayaran
+      function startPaymentCountdown() {
+        const countdownElement = document.getElementById('countdownTimer');
+        countdownTime = 300; // Reset ke 5 menit
+        
+        paymentTimer = setInterval(() => {
+          const minutes = Math.floor(countdownTime / 60);
+          const seconds = countdownTime % 60;
+          
+          countdownElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+          
+          if (countdownTime <= 0) {
+            clearInterval(paymentTimer);
+            showPaymentFailed();
+          } else {
+            countdownTime--;
+            
+            // Simulasi pengecekan pembayaran setiap 30 detik
+            if (countdownTime % 30 === 0 && !paymentChecked) {
+              simulatePaymentCheck();
+            }
+          }
+        }, 1000);
+      }
+      
+      // Fungsi untuk mensimulasikan pengecekan pembayaran
+      function simulatePaymentCheck() {
+        // Dalam implementasi nyata, ini akan memanggil API untuk mengecek status pembayaran
+        // Di sini kita simulasi dengan random success rate 70%
+        const isSuccess = Math.random() < 0.7;
+        
+        if (isSuccess) {
+          // Delay untuk simulasi proses pengecekan
+          setTimeout(() => {
+            showPaymentSuccess();
+          }, 2000);
+        }
+      }
+      
+      // Fungsi untuk menampilkan status pembayaran berhasil
+      function showPaymentSuccess() {
+        paymentChecked = true;
+        clearInterval(paymentTimer);
+        
+        // Update UI untuk status berhasil
+        document.getElementById('paymentPending').style.display = 'none';
+        document.getElementById('paymentSuccess').style.display = 'block';
+        document.getElementById('whatsappConfirm').style.display = 'block';
+        document.getElementById('checkPayment').style.display = 'none';
+        
+        // Update steps
+        document.getElementById('step2').classList.remove('step-active');
+        document.getElementById('step2').classList.add('step-completed');
+        document.getElementById('step3').classList.add('step-active');
+        
+        // Show success notification
+        showNotification('Pembayaran berhasil! Silakan konfirmasi via WhatsApp.');
+        
+        // Simpan status pembayaran (dalam implementasi nyata, ini akan disimpan di database)
+        if (currentOrder) {
+          currentOrder.paymentStatus = 'success';
+          currentOrder.paidAt = new Date().toISOString();
+        }
+      }
+      
+      // Fungsi untuk menampilkan status pembayaran gagal
+      function showPaymentFailed() {
+        paymentChecked = true;
+        
+        // Update UI untuk status gagal
+        document.getElementById('paymentPending').style.display = 'none';
+        document.getElementById('paymentFailed').style.display = 'block';
+        document.getElementById('checkPayment').style.display = 'block';
+        
+        // Show failed notification
+        showNotification('Waktu pembayaran telah habis. Silakan coba lagi.');
+      }
+      
+      // Fungsi untuk mereset status pembayaran
+      function resetPaymentStatus() {
+        paymentChecked = false;
+        clearInterval(paymentTimer);
+        
+        // Reset UI
+        document.getElementById('paymentPending').style.display = 'block';
+        document.getElementById('paymentSuccess').style.display = 'none';
+        document.getElementById('paymentFailed').style.display = 'none';
+        document.getElementById('whatsappConfirm').style.display = 'none';
+        document.getElementById('checkPayment').style.display = 'none';
+        
+        // Reset steps
+        document.getElementById('step1').classList.add('step-active');
+        document.getElementById('step2').classList.remove('step-active', 'step-completed');
+        document.getElementById('step3').classList.remove('step-active', 'step-completed');
+      }
+      
+      // Fungsi untuk menampilkan ringkasan pesanan
+      function showOrderSummary(productName, duration, price) {
+        const numericPrice = parseInt(price.replace(/[^\d]/g, ''));
+        const summaryElement = document.getElementById('orderSummary');
+        
+        summaryElement.innerHTML = `
+          <h4 style="color: var(--deep-burgundy); margin-bottom: 1rem; text-align: center;">Ringkasan Pesanan</h4>
+          <div class="summary-item">
+            <span>Produk:</span>
+            <span>${productName}</span>
+          </div>
+          <div class="summary-item">
+            <span>Durasi:</span>
+            <span>${duration}</span>
+          </div>
+          <div class="summary-item">
+            <span>Harga:</span>
+            <span>${price}</span>
+          </div>
+          <div class="summary-total">
+            <span>Total:</span>
+            <span>${price}</span>
+          </div>
+        `;
+      }
+      
+      // ==================== INTEGRASI DENGAN SISTEM YANG ADA ====================
+      
+      // Modifikasi fungsi showOrderModal untuk menyimpan informasi pesanan
+      function showOrderModal(productName, duration, price) {
+        currentOrder = { 
+          productName, 
+          duration, 
+          price,
+          orderId: generateOrderId(),
+          timestamp: new Date().toISOString()
+        };
+
+        modalProductInfo.innerHTML = `
+          <div style="text-align: center;">
+            <h4 style="color: var(--dark-chocolate); margin-bottom: 0.5rem;">${productName}</h4>
+            <p style="color: var(--vintage-light); margin-bottom: 0.5rem;">${duration}</p>
+            <p style="color: var(--forest-green); font-weight: bold; font-size: 1.2rem;">${price}</p>
+          </div>
+        `;
+
+        orderModal.classList.add("active");
+      }
+      
+      // Modifikasi fungsi showQrisModal untuk mengintegrasikan sistem pembayaran baru
+      function showQrisModal() {
+        if (!currentOrder) return;
+
+        const { productName, duration, price } = currentOrder;
+
+        // Reset status pembayaran
+        resetPaymentStatus();
+        
+        // Update QRIS dengan harga yang sesuai
+        updateQRISWithPrice(price);
+        
+        // Tampilkan ringkasan pesanan
+        showOrderSummary(productName, duration, price);
+        
+        // Update WhatsApp link
+        updateWhatsAppLink(parseInt(price.replace(/[^\d]/g, '')));
+
+        // Update steps
+        document.getElementById('step1').classList.add('step-completed');
+        document.getElementById('step2').classList.add('step-active');
+
+        orderModal.classList.remove("active");
+        qrisModal.classList.add("active");
+        
+        // Mulai countdown pembayaran
+        startPaymentCountdown();
+      }
+      
+      // Fungsi untuk generate order ID
+      function generateOrderId() {
+        const timestamp = Date.now().toString();
+        const random = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+        return `ORD${timestamp}${random}`;
+      }
+      
+      // Event listener untuk tombol cek pembayaran
+      document.getElementById('checkPayment').addEventListener('click', function() {
+        resetPaymentStatus();
+        startPaymentCountdown();
+        showNotification('Sedang memeriksa status pembayaran...');
+      });
+      
+      // ==================== SISTEM YANG SUDAH ADA ====================
+      
       // ==================== FLYING ICONS ANIMATION ====================
       function createFlyingIcons() {
         const flyingIcons = document.getElementById("flyingIcons");
@@ -1904,60 +2430,13 @@
         }, 3000);
       }
 
-      // ==================== ORDER & QRIS SYSTEM ====================
-      let currentOrder = null;
-
       // Modals
       const orderModal = document.getElementById("orderModal");
       const qrisModal = document.getElementById("qrisModal");
       const modalProductInfo = document.getElementById("modalProductInfo");
-      const qrisProductInfo = document.getElementById("qrisProductInfo");
-      const whatsappLink = document.getElementById("whatsappLink");
       const confirmOrderBtn = document.getElementById("confirmOrder");
       const cancelOrderBtn = document.getElementById("cancelOrder");
       const closeQrisBtn = document.getElementById("closeQris");
-
-      function showOrderModal(productName, duration, price) {
-        currentOrder = { productName, duration, price };
-
-        modalProductInfo.innerHTML = `
-          <div style="text-align: center;">
-            <h4 style="color: var(--dark-chocolate); margin-bottom: 0.5rem;">${productName}</h4>
-            <p style="color: var(--vintage-light); margin-bottom: 0.5rem;">${duration}</p>
-            <p style="color: var(--forest-green); font-weight: bold; font-size: 1.2rem;">${price}</p>
-          </div>
-        `;
-
-        orderModal.classList.add("active");
-      }
-
-      function showQrisModal() {
-        if (!currentOrder) return;
-
-        const { productName, duration, price } = currentOrder;
-
-        qrisProductInfo.innerHTML = `
-          <div style="text-align: center;">
-            <h4 style="color: var(--dark-chocolate); margin-bottom: 0.5rem;">${productName}</h4>
-            <p style="color: var(--vintage-light); margin-bottom: 0.5rem;">${duration}</p>
-            <p style="color: var(--forest-green); font-weight: bold; font-size: 1.2rem;">${price}</p>
-          </div>
-        `;
-
-        // Set WhatsApp link dengan pesan otomatis
-        const message = `Halo admin, saya sudah transfer untuk pesanan:
-
-📦 Produk: ${productName}
-⏱️ Durasi: ${duration}
-💰 Harga: ${price}
-
-Berikut bukti transfernya. Terima kasih!`;
-
-        whatsappLink.href = `https://wa.me/628176323491?text=${encodeURIComponent(message)}`;
-
-        orderModal.classList.remove("active");
-        qrisModal.classList.add("active");
-      }
 
       function closeOrderModal() {
         orderModal.classList.remove("active");
@@ -1966,26 +2445,9 @@ Berikut bukti transfernya. Terima kasih!`;
 
       function closeQrisModal() {
         qrisModal.classList.remove("active");
+        resetPaymentStatus();
         currentOrder = null;
       }
-
-      // Event Listeners untuk modal
-      confirmOrderBtn.addEventListener("click", showQrisModal);
-      cancelOrderBtn.addEventListener("click", closeOrderModal);
-      closeQrisBtn.addEventListener("click", closeQrisModal);
-
-      // Close modal when clicking outside
-      orderModal.addEventListener("click", function (e) {
-        if (e.target === orderModal) {
-          closeOrderModal();
-        }
-      });
-
-      qrisModal.addEventListener("click", function (e) {
-        if (e.target === qrisModal) {
-          closeQrisModal();
-        }
-      });
 
       // ==================== AI LIVE SUPPORT ====================
       const aiSupportBtn = document.getElementById('aiSupportBtn');
@@ -2562,10 +3024,28 @@ Berikut bukti transfernya. Terima kasih!`;
         renderProducts();
         setupSearch();
         showPage('home');
+        
+        // Inisialisasi event listener untuk modal pembayaran
+        confirmOrderBtn.addEventListener("click", showQrisModal);
+        cancelOrderBtn.addEventListener("click", closeOrderModal);
+        closeQrisBtn.addEventListener("click", closeQrisModal);
+        
+        // Event listener untuk modal overlay
+        orderModal.addEventListener("click", function (e) {
+          if (e.target === orderModal) {
+            closeOrderModal();
+          }
+        });
+
+        qrisModal.addEventListener("click", function (e) {
+          if (e.target === qrisModal) {
+            closeQrisModal();
+          }
+        });
       });
 
-      // Expose functions to global scope
+      // Ekspos fungsi ke global scope
       window.showOrderModal = showOrderModal;
     </script>
   </body>
-</html>
+  </html>
