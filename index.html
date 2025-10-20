@@ -760,6 +760,27 @@
         border-radius: var(--element-radius);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         margin: 0 auto 0.8rem;
+        border: 2px solid var(--gold-brass);
+      }
+
+      .qr-placeholder {
+        width: 200px;
+        height: 200px;
+        background: #f8f9fa;
+        border: 2px dashed var(--gold-brass);
+        border-radius: var(--element-radius);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 0.8rem;
+        color: var(--vintage-brown);
+      }
+
+      .qr-placeholder i {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: var(--gold-brass);
       }
 
       /* ===== FOOTER ===== */
@@ -895,6 +916,10 @@
         .guide-steps {
           grid-template-columns: 1fr;
         }
+
+        .qris-image, .qr-placeholder {
+          max-width: 180px;
+        }
       }
 
       @media (max-width: 480px) {
@@ -931,6 +956,10 @@
 
         .card-content {
           padding: 1.2rem;
+        }
+
+        .qris-image, .qr-placeholder {
+          max-width: 160px;
         }
       }
 
@@ -1571,11 +1600,17 @@
 
             <div class="qris-container" id="qrisContainer">
               <img
-                src="https://ibb.co.com/k6z8ZJwt"
+                src="https://i.ibb.co.com/rfq693zV/Whats-App-Image-2025-10-20-at-16-07-14-882beb4f.jpg"
                 alt="QR Code Pembayaran"
                 class="qris-image"
+                onerror="this.style.display='none'; document.getElementById('qrFallback').style.display='flex';"
               />
-              <p>Scan QR code di atas untuk melakukan pembayaran</p>
+              <div id="qrFallback" class="qr-placeholder" style="display: none;">
+                <i class="fas fa-qrcode"></i>
+                <span style="text-align: center; font-weight: 600;">QR Code Pembayaran</span>
+                <span style="text-align: center; font-size: 0.8rem; margin-top: 0.5rem;">Akan dikirim via WhatsApp</span>
+              </div>
+              <p>Scan QR code di atas untuk melakukan pembayaran via QRIS</p>
             </div>
 
             <button type="submit" class="order-btn">
