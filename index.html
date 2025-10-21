@@ -1068,7 +1068,7 @@
           <div class="hero-content animate-fade-in">
             <h1 class="hero-title">Premium Apps Collection By Salsa</h1>
             <p class="hero-subtitle">Vintage Digital Excellence</p>
-            <p class="hero-subtitle">Apa yang anda cari Pasti ada disini</p>
+            <p class="hero-subtitle">Here is all the premiums you need</p>
 
             <div class="hero-stats">
               <div class="stat-item">
@@ -1119,8 +1119,6 @@
                   <h3>Isi Data</h3>
                   <p>Isi nama dan nomor WhatsApp untuk konfirmasi</p>
                 </div>
-                <div class="qris-container" id="qrisContainer">
-                        <img src="https://i.ibb.co.com/LddvFbXY/qris-salsa.jpg" alt="QR Code Pembayaran" class="qris-image">
                 <div class="guide-step">
                   <div class="step-number">3</div>
                   <h3>Bayar & Aktivasi</h3>
@@ -1214,7 +1212,7 @@
         <section class="hero-section">
           <div class="hero-content">
             <h1 class="hero-title">Tentang Kami</h1>
-            <p class="hero-subtitle">Premium Digital Experience Since 2024</p>
+            <p class="hero-subtitle">Premium Digital Experience Since 2022</p>
           </div>
         </section>
 
@@ -1535,7 +1533,7 @@
 
       <div class="copyright">
         <p>
-          &copy; 2024 Premium Apps Collection By Salsa. All rights reserved.
+          &copy; 2022 Premium Apps Collection By Salsa. All rights reserved.
         </p>
       </div>
     </footer>
@@ -1652,7 +1650,7 @@
               Lakukan pembayaran sesuai instruksi di WhatsApp
             </li>
             <li style="margin-bottom: 1rem">
-              Tunggu konfirmasi dan produk akan dikirim dalam 5-15 menit
+              Tunggu konfirmasi dan produk akan dikirim dalam 1-60 menit
             </li>
           </ol>
           <div
@@ -2199,7 +2197,7 @@
           const customerPhone = document.getElementById("customerPhone").value;
 
           // Format pesan untuk WhatsApp
-          const message = `Halo Salsa, saya ingin memesan:
+          const message = `Halo Salsa, saya sudah melakukan pembayaran via QRIS & ingin memesan:
 
 📦 *PRODUK:* ${selectedProduct}
 ⏰ *DURASI:* ${selectedPlan.duration}
@@ -2211,7 +2209,10 @@ WhatsApp: ${customerPhone}
 
 💳 *METODE BAYAR:* QRIS
 
-Saya sudah siap untuk melakukan pembayaran via QRIS. Terima kasih!`;
+NOTE:
+⸝⸝ 🛒 ꒰ payment first, no rush order. order = sabar ⸝⸝
+Jika belum melakukan Pembayaran, silahkan untuk scan barcode di Website/PC.
+Silahkan mengirimkan bukti Transaksi`;
 
           // Encode message for URL
           const encodedMessage = encodeURIComponent(message);
