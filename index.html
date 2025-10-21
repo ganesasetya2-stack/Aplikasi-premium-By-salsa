@@ -1650,7 +1650,7 @@
               Lakukan pembayaran sesuai instruksi di WhatsApp
             </li>
             <li style="margin-bottom: 1rem">
-              Tunggu konfirmasi dan produk akan dikirim dalam 1-60 menit
+              Tunggu konfirmasi dan produk akan dikirim dalam 5-15 menit
             </li>
           </ol>
           <div
@@ -2197,7 +2197,8 @@
           const customerPhone = document.getElementById("customerPhone").value;
 
           // Format pesan untuk WhatsApp
-          const message = `Halo Salsa, saya sudah melakukan pembayaran via QRIS & ingin memesan:
+          const message = `Halo Salsa, saya sudah melakukan pembayaran via QRIS & ingin memesan: 
+
 
 📦 *PRODUK:* ${selectedProduct}
 ⏰ *DURASI:* ${selectedPlan.duration}
@@ -2209,10 +2210,10 @@ WhatsApp: ${customerPhone}
 
 💳 *METODE BAYAR:* QRIS
 
-*NOTE:*
+*💌NOTE:*
 ⸝⸝ 🛒 ꒰ payment first, no rush order. order = sabar ⸝⸝
-*Jika belum melakukan Pembayaran, silahkan untuk scan barcode di Website/PC.*
-*Silahkan mengirimkan bukti Transaksi`;*
+_Jika belum melakukan Pembayaran, silahkan untuk scan barcode di Website/PC._
+*Silahkan mengirimkan bukti Transaksi🤗*`;
 
           // Encode message for URL
           const encodedMessage = encodeURIComponent(message);
